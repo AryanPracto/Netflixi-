@@ -1,0 +1,127 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+  }
+  
+  body {
+    background-color: #000;
+    color: #fff;
+    background-image: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)),url(../Home/images/header-image.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: repeat;
+    background-attachment: fixed; /* Keeps the background static */
+    min-height: 100vh; 
+  }
+  
+  .header {
+    width: 100%;
+    height: 100vh;
+    padding: 10px 8%;
+    position: relative;
+  }
+  
+  nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 0;
+  }
+  
+  .logo {
+    width: 150px;
+    cursor: pointer;
+  }
+  
+  .logout-btn {
+    background-color: #e50914; /* Netflix red color */
+  color: white;
+  font-size: 16px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  }
+  
+  .logout-btn:hover {
+    background: #f40612;
+  }
+  
+  .header-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    margin-top: 100px;
+  }
+  
+  .header-content h1 {
+    font-size: 60px;
+    line-height: 70px;
+    font-weight: 600;
+    max-width: 650px;
+  }
+  
+  .header-content h3 {
+    font-weight: 400;
+    margin-bottom: 20px;
+  }
+  
+  .genre-selection {
+    margin-top: 30px;
+    padding: 20px;
+    display: inline-block;
+    border-radius: 5px;
+    width: 300px;
+    text-align: center;
+  }
+  
+  .genre-selection select {
+    padding: 10px;
+    width: 100%;
+    border-radius: 5px;
+    background-color: #333;
+    color: white;
+    font-size: 16px;
+    border: none;
+    outline: none;
+  }
+  
+  .genre-selection p {
+    margin-top: 10px;
+    font-size: 18px;
+    color: #fff;
+  }
+
+  /* Style for the "Want to watch more?" section */
+.subscribe-section {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.subscribe-section p {
+  font-size: 18px;
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+.subscribe-btn {
+  background-color: #e50914; /* Netflix red color */
+  color: white;
+  font-size: 16px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.subscribe-btn:hover {
+  background-color: #f40612; /* Darker red on hover */
+}
+
+  

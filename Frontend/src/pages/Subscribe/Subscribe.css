@@ -1,0 +1,171 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+  }
+
+  label{
+    color: #fff;
+  }
+  
+  body {
+    background-color: #000;
+    color: #fff;
+    background-image: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)),url(../Home/images/header-image.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed; /* Keeps the background static */
+    min-height: 100vh; 
+  }
+  
+  .header {
+    width: 100%;
+    padding: 10px 8%;
+    position: relative;
+  }
+  
+  nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 0;
+  }
+  
+  .logo {
+    width: 150px;
+    cursor: pointer;
+  }
+  
+  nav button {
+    border: 0;
+    outline: 0;
+    background: #db0001;
+    color: #fff;
+    padding: 7px 20px;
+    font-size: 12px;
+    border-radius: 4px;
+    margin-left: 10px;
+    cursor: pointer;
+  }
+  
+  nav button:hover {
+    background: #f40612;
+  }
+
+  /* Styling for subscription form */
+.subscription-form {
+    max-width: 400px;
+    margin-top: 200px;
+    margin-left: 550px;
+    padding: 20px;
+    background-color: #f4f4f4;
+    border-radius: 8px;
+    text-align: center;
+  }
+  
+  .subscription-form h2 {
+    margin-bottom: 20px;
+    color: #000;
+  }
+  
+  .form-group {
+    margin-bottom: 15px;
+  }
+  
+  .form-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+  .form-group input,
+  .form-group select {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+  }
+  .subscription-container {
+    position: relative;
+    text-align: center;
+    /* background: rgba(0, 0, 0, 0.8); */
+    padding: 30px;
+    border-radius: 10px;
+    max-width: 600px;
+    width: 90%;
+    color: white;
+    z-index: 10;
+}
+.subs{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+/* Form styles */
+.form-group {
+    margin-bottom: 20px;
+}
+
+input {
+    width: 90%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+/* Plans container */
+.plans {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+/* Plan card styling */
+.plan-card {
+    background: rgba(255, 255, 255, 0.15);
+    padding: 20px;
+    border-radius: 10px;
+    width: 160px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    backdrop-filter: blur(5px);
+    border: 2px solid transparent;
+}
+
+.plan-card:hover {
+    transform: scale(1.05);
+}
+
+.selected {
+    border: 2px solid red;
+    background: rgba(255, 255, 255, 0.3);
+}
+  .pay-now-btn {
+    width: 100%;
+    padding: 12px;
+    background-color: #e50914; /* Netflix red */
+    color: white;
+    font-size: 18px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 20px;
+  }
+  
+  .pay-now-btn:hover {
+    background-color: #f40612;
+  }
+  
