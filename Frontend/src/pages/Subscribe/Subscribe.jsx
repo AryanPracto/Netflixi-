@@ -5,9 +5,9 @@ import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
 const plans = [
-  { name: "Basic", price: 149, devices: 1, quality: "HD" },
-  { name: "Advanced", price: 349, devices: 3, quality: "Full HD" },
-  { name: "Premium", price: 549, devices: 5, quality: "Ultra HD" }
+  { name: "Basic", price: 149, devices: 1, duration: "1 Month" },
+  { name: "Advanced", price: 349, devices: 3, duration: "3 Months" },
+  { name: "Premium", price: 549, devices: 5, duration: "6 Months" }
 ];
 
 const Subscribe = () => {
@@ -79,7 +79,7 @@ const Subscribe = () => {
                   <h3>{plan.name}</h3>
                   <p>Price: ₹{plan.price}</p>
                   <p>Devices: {plan.devices}</p>
-                  <p>Quality: {plan.quality}</p>
+                  <p>Duration: {plan.duration}</p>
                 </div>
               ))}
             </div>
