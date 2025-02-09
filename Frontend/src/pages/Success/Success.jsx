@@ -1,25 +1,27 @@
-import React, { useState, useEffect,useContext,useRef } from 'react';
+import React, { useState, useEffect, useContext, useRef } from 'react';
 import './Success.css';
 import { useNavigate } from 'react-router-dom';
 import logo_img from '../Home/images/logo.png';
 import { StoreContext } from '../../context/StoreContext.jsx';
 import Hls from 'hls.js';
 import MovieCard from '../MovieCard/MovieCard.jsx';
+import { FaUserCircle } from "react-icons/fa"; // Importing user icon
+import { toast } from 'react-toastify';
 
 const Success = () => {
   const navigate = useNavigate();
   const [selectedGenre, setSelectedGenre] = useState('');
-    const [selectedMovie, setSelectedMovie] = useState(null);
-    const [playing, setPlaying] = useState(false);
-    const videoRef = useRef(null);
-  const {movieList,fetchAllMovies,fetchMoviesByCategory}=useContext(StoreContext)
+  const [selectedMovie, setSelectedMovie] = useState(null);
+  const [playing, setPlaying] = useState(false);
+  const videoRef = useRef(null);
+  const { movieList, fetchAllMovies,fetchMoviesByCategory } = useContext(StoreContext);
 
   useEffect(() => {
-    if(!localStorage.getItem('token')){
-      navigate('/')
+    if (!localStorage.getItem('token')) {
+      navigate('/');
     }
+    toast.success("payment successful, Welcome !!")
     fetchAllMovies();
-
   }, []);
 
   useEffect(() => {
@@ -40,8 +42,9 @@ const Success = () => {
     setSelectedGenre(genre);
     if (genre) {
       fetchMoviesByCategory(genre);
-    } else {
-      fetchAllMovies();
+    }
+    else{
+      fetchAllMovies()
     }
   };
 
@@ -52,7 +55,8 @@ const Success = () => {
 
   const handleLogout = async () => {
     try {
-      localStorage.removeItem('token')
+      localStorage.removeItem('token');
+      localStorage.removeItem('userName'); // Clear user data
       navigate('/');
     } catch (error) {
       console.error('Error during logout:', error);
@@ -64,6 +68,8 @@ const Success = () => {
       <div className="header">
         <nav>
           <img src={logo_img} className="logo" alt="Netflix Logo" />
+          
+          {/* Genre Selection */}
           <div className="genre-selection">
             <h3>Select Movie Genre</h3>
             <select value={selectedGenre} onChange={handleGenreChange}>
@@ -73,23 +79,31 @@ const Success = () => {
               <option value="action">Action</option>
               <option value="suspense-thriller">Suspense-Thriller</option>
             </select>
-            {selectedGenre && <p>You selected: {selectedGenre}</p>}
           </div>
+
+          {/* User Profile */}
+
           <button onClick={handleLogout}>Logout</button>
+          <div className="user-profile">
+              <FaUserCircle className="user-icon" size={35} />
+            <span>{localStorage.getItem('userName')}</span>
+          </div>
         </nav>
 
+        {/* Movie List */}
         <div className="movie-list">
           {movieList.length === 0 ? (
             <p>No movies available for the selected category</p>
           ) : (
             <div className="movies">
               {movieList.map((movie) => (
-                <MovieCard sub={true} key={movie.id} movie={movie} setPlaying={setPlaying} setSelectedMovie={setSelectedMovie}/>
+                <MovieCard sub={true} key={movie.id} movie={movie} setPlaying={setPlaying} setSelectedMovie={setSelectedMovie} />
               ))}
             </div>
           )}
         </div>
 
+        {/* Video Player */}
         {playing && selectedMovie && (
           <div className="video-player">
             <button className="close-btn" onClick={handleClosePlayer}>X</button>

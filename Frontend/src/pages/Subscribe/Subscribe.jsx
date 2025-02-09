@@ -23,6 +23,7 @@ const Subscribe = () => {
 
   const handleLogout = () => {
     localStorage.removeItem('token');
+    localStorage.removeItem('userName')
     navigate('/');
   };
 

@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom"; 
 import axios from "axios"; 
 import "./Signup.css"; 
+import { toast } from "react-toastify";
 
 const Signup = () => {
   const [name, setName] = useState("");
@@ -24,6 +25,7 @@ const Signup = () => {
         password, 
       });
       localStorage.setItem('token',response.data.token);
+      localStorage.setItem('userName',response.data.name);
       
       navigate("/regHome"); 
 
@@ -32,7 +34,7 @@ const Signup = () => {
       setPassword("");
     } catch (err) {
       setError("Sign up failed. Please try again.");
-      alert("error in signup")
+      toast.error("error in sign up, try again")
       console.error(err.response || err.message); 
     }
   };

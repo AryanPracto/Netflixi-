@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios"; 
 import "./Login.css"; 
+import { toast } from "react-toastify";
 
 const Login = () => {
   const [email, setEmail] = useState(""); 
@@ -24,6 +25,7 @@ const Login = () => {
       });
 
       localStorage.setItem('token',response.data.token)
+      localStorage.setItem('userName',response.data.name)
 
       if(response.data.subId===1 || response.data.subId===3 || response.data.subId===2 ){
         navigate('/success')
@@ -35,7 +37,7 @@ const Login = () => {
       setPassword("");
     } catch (err) {
       console.error("Error during login:", err.response || err.message);
-      alert("Login failed. Please try again.");
+      toast.error("error in login please try again")
     }
   };
 

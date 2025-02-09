@@ -33,19 +33,18 @@ nav{
 }
 
 nav button {
-    border: none;
-    background: #db0001;
-    color: white;
-    padding: 12px 26px; /* Increased size */
-    font-size: 16px; /* Slightly larger font */
-    border-radius: 5px;
-    cursor: pointer;
-    font-weight: 600;
-    transition: 0.3s;
+    background-color: #e50914; /* Netflix red color */
+  color: white;
+  font-size: 16px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
 nav button:hover {
-    background: #b10600;
+    background: #f40612;
     transform: scale(1.05);
 }
 

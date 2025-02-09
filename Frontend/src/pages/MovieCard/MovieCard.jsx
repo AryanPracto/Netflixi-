@@ -1,13 +1,15 @@
 import React from "react";
 import "./MovieCard.css";
+import { toast } from "react-toastify";
 
 const MovieCard = ({ movie ,sub,setPlaying,setSelectedMovie}) => {
   const handleMovieClick = () => {
     if(!sub){
-      alert("Please subscribe to enjoy 💰");
+      toast.error("plz subscribe to watch !")
     }else{
       setSelectedMovie(movie);
     setPlaying(true);
+    toast.success(`playing ${movie.title}`)
     }
   };
 

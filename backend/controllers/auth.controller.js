@@ -39,7 +39,7 @@ export async function signup(req,res){
         })
 
         const token=generateToken(newUser.id);
-        return res.status(201).json({success:true,message:"user created successfully",token})
+        return res.status(201).json({success:true,message:"user created successfully",token,name})
     } catch (error) {
         console.log(error);
         res.status(500).json({success:false,message:"internal server error"})
@@ -74,8 +74,13 @@ try {
         if(user.subscriptionId!=null){
             subId=user.subscriptionId
         }
+
+        const existingUser = await User.findOne({
+            where: { email },  // Find user by email
+        });
+        const name=existingUser.name;
     
-        return res.status(200).json({success:true,message:"login successful",token,subId})
+        return res.status(200).json({success:true,message:"login successful",token,subId,name})
 } catch (error) {
     console.log(error);
     return res.status(500).json({success:false,message:"internal server error"})

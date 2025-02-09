@@ -7,9 +7,13 @@ import Subscribe from './pages/Subscribe/Subscribe.jsx'
 import Success from './pages/Success/Success.jsx';
 import Cancel from './pages/Cancel/Cancel.jsx';
 import Error from './pages/Error/Error.jsx';
+import "react-toastify/dist/ReactToastify.css";
+import { ToastContainer } from 'react-toastify';
 
 function App() {
   return (
+    <>
+    <ToastContainer/>
     <Router>
       <Routes>
         <Route path="/" element={<Home/>}></Route>
@@ -22,6 +26,7 @@ function App() {
         <Route path='*' element={<Error/>}></Route>
       </Routes>
     </Router>
+    </>
   )
 }
 

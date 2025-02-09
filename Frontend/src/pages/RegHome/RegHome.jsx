@@ -3,7 +3,9 @@ import { useNavigate } from "react-router-dom";
 import "./RegHome.css";
 import logo_img from "../Home/images/logo.png";
 import { StoreContext } from "../../context/StoreContext.jsx";
-import MovieCard from '../MovieCard/MovieCard.jsx'; 
+import MovieCard from '../MovieCard/MovieCard.jsx';
+import { FaUserCircle } from "react-icons/fa"; // Importing user icon
+import { toast, ToastContainer } from "react-toastify";
 
 const RegHome = () => {
   const navigate = useNavigate();
@@ -15,7 +17,8 @@ const RegHome = () => {
     if (!localStorage.getItem("token")) {
       navigate("/");
     }
-  }, [navigate]);
+    toast.success("signed in successfully !!")
+  }, []);
 
   const handleGenreChange = (e) => {
     const genre = e.target.value;
@@ -29,6 +32,7 @@ const RegHome = () => {
 
   const handleLogout = () => {
     localStorage.removeItem("token");
+    localStorage.removeItem('userName')
     setToken("");
     navigate("/");
   };
@@ -60,6 +64,10 @@ const RegHome = () => {
               Logout
             </button>
           </div>
+          <div className="user-profile">
+                          <FaUserCircle className="user-icon" size={35} />
+                        <span>{localStorage.getItem('userName')}</span>
+                      </div>
         </nav>
 
         <div className="movie-list">

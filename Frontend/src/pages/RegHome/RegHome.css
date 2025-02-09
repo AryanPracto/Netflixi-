@@ -34,6 +34,23 @@
     width: 150px;
     cursor: pointer;
   }
+  .user-profile {
+    display: flex;
+    align-items: center;
+    
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  .user-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    background-color: #333;
+  }
   
   .logout-btn {
     background-color: #e50914; /* Netflix red color */
