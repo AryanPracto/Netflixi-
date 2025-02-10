@@ -4,8 +4,8 @@ import "./RegHome.css";
 import logo_img from "../Home/images/logo.png";
 import { StoreContext } from "../../context/StoreContext.jsx";
 import MovieCard from '../MovieCard/MovieCard.jsx';
-import { FaUserCircle } from "react-icons/fa"; // Importing user icon
-import { toast, ToastContainer } from "react-toastify";
+import { FaUserCircle } from "react-icons/fa";
+import { toast} from "react-toastify";
 
 const RegHome = () => {
   const navigate = useNavigate();
