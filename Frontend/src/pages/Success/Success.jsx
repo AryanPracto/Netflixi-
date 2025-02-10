@@ -31,7 +31,7 @@ const Success = () => {
         const hls = new Hls();
         hls.loadSource(selectedMovie.streamURL);
         hls.attachMedia(video);
-      } else if (video.canPlayType('application/vnd.apple.mpegurl')) {
+      } else if (video.canPlayType('application/vnd.apple.mpegurl')) {//cheking if the browser can play an hls video format .m3u*8
         video.src = selectedMovie.streamURL;
       }
     }
